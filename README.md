@@ -27,5 +27,7 @@
 ## 2. Remote-Controller
 
    ### 리모컨 화면 
-   ### 
-   <img width="860" height="3452" alt="image" src="https://github.com/user-attachments/assets/3a337e5a-7055-4c1b-9ca7-d8b37458dc7f" />
+   ### 음량, 채널, 음소거, 자막 위치, 터치패드, 좌, 우, 확인 버튼
+   <img width="360" height="655" alt="image" src="https://github.com/user-attachments/assets/209825ba-ea42-4842-948a-4117ae6f9abd" />
+
+   
