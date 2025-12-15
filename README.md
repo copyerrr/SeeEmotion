@@ -6,4 +6,6 @@
    <img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/df8bebe7-42c8-46f4-b050-ec0ce7741c43" />
    어떤 모드를 시청할 지 고르는 화면
    [CURRENT_MODE_ID]
+
+   
 ### 2. Remote-Controller
