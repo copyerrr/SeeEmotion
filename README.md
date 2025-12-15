@@ -7,5 +7,12 @@
    어떤 모드를 시청할 지 고르는 화면
    [CURRENT_MODE_ID]
 
+   <img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/29535ca4-be18-45a7-bc95-49d55abfd1eb" />
+   퀵모드 - 실시간으로 자막 스타일 on/off 가능
+   스크린 - 스타일링 된 자막 표현
+
+   <img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/498de6e0-11c1-4754-8b24-7e7fc51ff4e3" />
+   커스텀 - 나만의 모드 추가, 삭제, 적용 가능
+   상세설정 - on/off 뿐만 아니라 말의 강도 가중치, 색상 가중치(채도) 조절 가능
    
 ### 2. Remote-Controller
