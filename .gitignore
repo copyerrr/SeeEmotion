@@ -2,6 +2,36 @@
 *.env
 .env.local
 
+# Python 바이트코드 파일 (실행 시 자동 생성)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 로그 파일 (실행 시 자동 생성)
+logs/
+*.log
+
+# IDE 설정 파일
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Flutter 빌드 결과물 (실행 시 자동 생성)
+build/
+*.dill
+.dart_tool/
+
+# 테스트 파일
+test.txt
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
 # 비디오 파일 (큰 파일)
 frontend/deaftv_lgdxschool_projects/assets/*.mp4
 frontend/deaftv_lgdxschool_projects/assets/*.wav
