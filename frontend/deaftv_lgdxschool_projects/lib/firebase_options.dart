@@ -54,13 +54,14 @@ class DefaultFirebaseOptions {
   }
 
   static FirebaseOptions get web {
-    final apiKey = dotenv.env['FIREBASE_WEB_API_KEY'];
-    final appId = dotenv.env['FIREBASE_WEB_APP_ID'];
-    final messagingSenderId = dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'];
-    final projectId = dotenv.env['FIREBASE_WEB_PROJECT_ID'];
-    final authDomain = dotenv.env['FIREBASE_WEB_AUTH_DOMAIN'];
-    final storageBucket = dotenv.env['FIREBASE_WEB_STORAGE_BUCKET'];
-    final measurementId = dotenv.env['FIREBASE_WEB_MEASUREMENT_ID'];
+    // deaftv는 공통 변수(FIREBASE_*) 사용
+    final apiKey = dotenv.env['FIREBASE_WEB_API_KEY'] ?? dotenv.env['FIREBASE_API_KEY'];
+    final appId = dotenv.env['FIREBASE_WEB_APP_ID'] ?? dotenv.env['FIREBASE_APP_ID'];
+    final messagingSenderId = dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'] ?? dotenv.env['FIREBASE_MESSAGING_SENDER_ID'];
+    final projectId = dotenv.env['FIREBASE_WEB_PROJECT_ID'] ?? dotenv.env['FIREBASE_PROJECT_ID'];
+    final authDomain = dotenv.env['FIREBASE_WEB_AUTH_DOMAIN'] ?? dotenv.env['FIREBASE_AUTH_DOMAIN'];
+    final storageBucket = dotenv.env['FIREBASE_WEB_STORAGE_BUCKET'] ?? dotenv.env['FIREBASE_STORAGE_BUCKET'];
+    final measurementId = dotenv.env['FIREBASE_WEB_MEASUREMENT_ID'] ?? dotenv.env['FIREBASE_MEASUREMENT_ID'];
 
     if (apiKey == null ||
         appId == null ||

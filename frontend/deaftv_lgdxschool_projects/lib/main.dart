@@ -18,14 +18,27 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 // 🔹 Firebase 초기화까지 마친 후에 앱 실행
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // .env 파일 로드 (백엔드와 동일한 형식: KEY=value)
   try {
     await dotenv.load(fileName: ".env");
+    // 로드 확인 (deaftv는 공통 변수 FIREBASE_* 사용)
+    final testKey =
+        dotenv.env['FIREBASE_WEB_API_KEY'] ?? dotenv.env['FIREBASE_API_KEY'];
+    if (testKey == null || testKey.isEmpty) {
+      throw Exception(
+          '.env 파일이 로드되었지만 FIREBASE_API_KEY 또는 FIREBASE_WEB_API_KEY를 찾을 수 없습니다.');
+    }
+    print("✅ .env 파일 로드 성공: FIREBASE_API_KEY=${testKey.substring(0, 10)}...");
   } catch (e) {
-    print("Warning: .env file not found. Using default values.");
+    print("❌ .env 파일 로드 실패: $e");
+    print("💡 해결 방법:");
+    print("   1. flutter clean 실행");
+    print("   2. flutter run -d chrome 다시 실행");
+    print("   3. .env 파일이 frontend/deaftv_lgdxschool_projects/.env 경로에 있는지 확인");
+    rethrow; // 에러를 다시 던져서 앱이 시작되지 않도록
   }
-  
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(const MyApp());

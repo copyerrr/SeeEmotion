@@ -122,10 +122,9 @@ class CaptionModeResponse(CaptionModeBase):
         else:
             data['sound_pitch'] = '없음'
         
-        # color_level → emotion_color 역변환
-        if model.fontColor_toggle and model.color_level:
-            color_map = {0: '없음', 1: '빨강', 2: '파랑', 3: '초록'}
-            data['emotion_color'] = color_map.get(model.color_level, '없음')
+        # color_level → emotion_color 역변환 (단계 형식으로 변환)
+        if model.fontColor_toggle and model.color_level and model.color_level > 0:
+            data['emotion_color'] = f'{model.color_level}단계'
         else:
             data['emotion_color'] = '없음'
         
