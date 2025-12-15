@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "632864778726",
+    "project_id": "lg-tv-remotec",
+    "storage_bucket": "lg-tv-remotec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632864778726:android:8df30de11b7455d07ece27",
+        "android_client_info": {
+          "package_name": "com.example.deaftv_lgdxschool_projects"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAn7p7cjD88x818upsp32bcvm1jpbnIp0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

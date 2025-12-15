@@ -1,0 +1,53 @@
+name: remote_controller_app
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  vibration: ^3.1.4
+  sensors_plus: ^4.0.2
+  firebase_core: ^4.2.1
+  cloud_firestore: ^6.1.0
+  flutter_dotenv: ^5.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # --------------------------
+  # 이미지 / 아이콘 / JSON 등 에셋 추가
+  # --------------------------
+  assets:
+    - .env
+    - assets/마이크.png
+    - assets/자막패드.png
+    - assets/환경설정.png
+    - assets/power.png
+    - assets/quit.png
+    - assets/back_button.png
+    - assets/no_sound.png
+    - assets/home_button.png
+    - assets/배경화면.png
+    - assets/house_icon.png
+    - assets/시계.png
+    - assets/remote.png
+    - assets/ThinQ_play_icon.png
+    - assets/tv_icon.png
+    - assets/menu.png
+    - assets/home_home.png
+    - assets/device.png
+    - assets/care.png
+    - assets/bell.png
+    - assets/qr_scan.png
+    - assets/red_lg.png
