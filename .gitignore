@@ -47,3 +47,6 @@ panns_data/*.pth
 panns_data/*.pt
 backend/dg-env
 frontend/remote_controller_app/assets/*.mp4
+
+# Backend 마크다운 문서 (참고용, Git에 불필요)
+backend/*.md
