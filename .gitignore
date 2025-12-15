@@ -32,6 +32,11 @@ test.txt
 Thumbs.db
 desktop.ini
 
+# Firebase 설정 파일 (API 키 포함)
+**/google-services.json
+**/GoogleService-Info.plist
+firebase.json
+
 # 비디오 파일 (큰 파일)
 frontend/deaftv_lgdxschool_projects/assets/*.mp4
 frontend/deaftv_lgdxschool_projects/assets/*.wav

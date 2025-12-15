@@ -41,49 +41,120 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static FirebaseOptions get web => FirebaseOptions(
-    apiKey: dotenv.env['FIREBASE_WEB_API_KEY'] ?? 'AIzaSyAY5Dd58cma28su-lErbDavyyqsAY7CZ34',
-    appId: dotenv.env['FIREBASE_WEB_APP_ID'] ?? '1:632864778726:web:239254e42d1d2f857ece27',
-    messagingSenderId: dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'] ?? '632864778726',
-    projectId: dotenv.env['FIREBASE_WEB_PROJECT_ID'] ?? 'lg-tv-remotec',
-    authDomain: dotenv.env['FIREBASE_WEB_AUTH_DOMAIN'] ?? 'lg-tv-remotec.firebaseapp.com',
-    storageBucket: dotenv.env['FIREBASE_WEB_STORAGE_BUCKET'] ?? 'lg-tv-remotec.firebasestorage.app',
-    measurementId: dotenv.env['FIREBASE_WEB_MEASUREMENT_ID'] ?? 'G-EC5BWZX0C3',
-  );
+  static FirebaseOptions get web {
+    final apiKey = dotenv.env['FIREBASE_WEB_API_KEY'];
+    final appId = dotenv.env['FIREBASE_WEB_APP_ID'];
+    final messagingSenderId = dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'];
+    final projectId = dotenv.env['FIREBASE_WEB_PROJECT_ID'];
+    final authDomain = dotenv.env['FIREBASE_WEB_AUTH_DOMAIN'];
+    final storageBucket = dotenv.env['FIREBASE_WEB_STORAGE_BUCKET'];
+    final measurementId = dotenv.env['FIREBASE_WEB_MEASUREMENT_ID'];
+    
+    if (apiKey == null || appId == null || messagingSenderId == null || 
+        projectId == null || authDomain == null || storageBucket == null) {
+      throw Exception('Firebase 환경 변수가 설정되지 않았습니다. .env 파일을 확인하세요.');
+    }
+    
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+      authDomain: authDomain,
+      storageBucket: storageBucket,
+      measurementId: measurementId,
+    );
+  }
 
-  static FirebaseOptions get android => FirebaseOptions(
-    apiKey: dotenv.env['FIREBASE_ANDROID_API_KEY'] ?? 'AIzaSyCAn7p7cjD88x818upsp32bcvm1jpbnIp0',
-    appId: dotenv.env['FIREBASE_ANDROID_APP_ID'] ?? '1:632864778726:android:e4297775ad19c5407ece27',
-    messagingSenderId: dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'] ?? '632864778726',
-    projectId: dotenv.env['FIREBASE_WEB_PROJECT_ID'] ?? 'lg-tv-remotec',
-    storageBucket: dotenv.env['FIREBASE_ANDROID_STORAGE_BUCKET'] ?? 'lg-tv-remotec.firebasestorage.app',
-  );
+  static FirebaseOptions get android {
+    final apiKey = dotenv.env['FIREBASE_ANDROID_API_KEY'];
+    final appId = dotenv.env['FIREBASE_ANDROID_APP_ID'];
+    final messagingSenderId = dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'];
+    final projectId = dotenv.env['FIREBASE_WEB_PROJECT_ID'];
+    final storageBucket = dotenv.env['FIREBASE_ANDROID_STORAGE_BUCKET'];
+    
+    if (apiKey == null || appId == null || messagingSenderId == null || 
+        projectId == null || storageBucket == null) {
+      throw Exception('Firebase 환경 변수가 설정되지 않았습니다. .env 파일을 확인하세요.');
+    }
+    
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+      storageBucket: storageBucket,
+    );
+  }
 
-  static FirebaseOptions get ios => FirebaseOptions(
-    apiKey: dotenv.env['FIREBASE_IOS_API_KEY'] ?? 'AIzaSyB3ibP28NaLCg5SYTRpSKbey9T492ucSn4',
-    appId: dotenv.env['FIREBASE_IOS_APP_ID'] ?? '1:632864778726:ios:b037eab112f008cb7ece27',
-    messagingSenderId: dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'] ?? '632864778726',
-    projectId: dotenv.env['FIREBASE_WEB_PROJECT_ID'] ?? 'lg-tv-remotec',
-    storageBucket: dotenv.env['FIREBASE_IOS_STORAGE_BUCKET'] ?? 'lg-tv-remotec.firebasestorage.app',
-    iosBundleId: dotenv.env['FIREBASE_IOS_BUNDLE_ID'] ?? 'com.example.remoteControllerApp',
-  );
+  static FirebaseOptions get ios {
+    final apiKey = dotenv.env['FIREBASE_IOS_API_KEY'];
+    final appId = dotenv.env['FIREBASE_IOS_APP_ID'];
+    final messagingSenderId = dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'];
+    final projectId = dotenv.env['FIREBASE_WEB_PROJECT_ID'];
+    final storageBucket = dotenv.env['FIREBASE_IOS_STORAGE_BUCKET'];
+    final iosBundleId = dotenv.env['FIREBASE_IOS_BUNDLE_ID'];
+    
+    if (apiKey == null || appId == null || messagingSenderId == null || 
+        projectId == null || storageBucket == null || iosBundleId == null) {
+      throw Exception('Firebase 환경 변수가 설정되지 않았습니다. .env 파일을 확인하세요.');
+    }
+    
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+      storageBucket: storageBucket,
+      iosBundleId: iosBundleId,
+    );
+  }
 
-  static FirebaseOptions get macos => FirebaseOptions(
-    apiKey: dotenv.env['FIREBASE_MACOS_API_KEY'] ?? 'AIzaSyB3ibP28NaLCg5SYTRpSKbey9T492ucSn4',
-    appId: dotenv.env['FIREBASE_MACOS_APP_ID'] ?? '1:632864778726:ios:b037eab112f008cb7ece27',
-    messagingSenderId: dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'] ?? '632864778726',
-    projectId: dotenv.env['FIREBASE_WEB_PROJECT_ID'] ?? 'lg-tv-remotec',
-    storageBucket: dotenv.env['FIREBASE_MACOS_STORAGE_BUCKET'] ?? 'lg-tv-remotec.firebasestorage.app',
-    iosBundleId: dotenv.env['FIREBASE_MACOS_BUNDLE_ID'] ?? 'com.example.remoteControllerApp',
-  );
+  static FirebaseOptions get macos {
+    final apiKey = dotenv.env['FIREBASE_MACOS_API_KEY'];
+    final appId = dotenv.env['FIREBASE_MACOS_APP_ID'];
+    final messagingSenderId = dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'];
+    final projectId = dotenv.env['FIREBASE_WEB_PROJECT_ID'];
+    final storageBucket = dotenv.env['FIREBASE_MACOS_STORAGE_BUCKET'];
+    final iosBundleId = dotenv.env['FIREBASE_MACOS_BUNDLE_ID'];
+    
+    if (apiKey == null || appId == null || messagingSenderId == null || 
+        projectId == null || storageBucket == null || iosBundleId == null) {
+      throw Exception('Firebase 환경 변수가 설정되지 않았습니다. .env 파일을 확인하세요.');
+    }
+    
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+      storageBucket: storageBucket,
+      iosBundleId: iosBundleId,
+    );
+  }
 
-  static FirebaseOptions get windows => FirebaseOptions(
-    apiKey: dotenv.env['FIREBASE_WINDOWS_API_KEY'] ?? 'AIzaSyAY5Dd58cma28su-lErbDavyyqsAY7CZ34',
-    appId: dotenv.env['FIREBASE_WINDOWS_APP_ID'] ?? '1:632864778726:web:28ad93ca727316f07ece27',
-    messagingSenderId: dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'] ?? '632864778726',
-    projectId: dotenv.env['FIREBASE_WEB_PROJECT_ID'] ?? 'lg-tv-remotec',
-    authDomain: dotenv.env['FIREBASE_WINDOWS_AUTH_DOMAIN'] ?? 'lg-tv-remotec.firebaseapp.com',
-    storageBucket: dotenv.env['FIREBASE_WINDOWS_STORAGE_BUCKET'] ?? 'lg-tv-remotec.firebasestorage.app',
-    measurementId: dotenv.env['FIREBASE_WINDOWS_MEASUREMENT_ID'] ?? 'G-868EY0KT8V',
-  );
+  static FirebaseOptions get windows {
+    final apiKey = dotenv.env['FIREBASE_WINDOWS_API_KEY'];
+    final appId = dotenv.env['FIREBASE_WINDOWS_APP_ID'];
+    final messagingSenderId = dotenv.env['FIREBASE_WEB_MESSAGING_SENDER_ID'];
+    final projectId = dotenv.env['FIREBASE_WEB_PROJECT_ID'];
+    final authDomain = dotenv.env['FIREBASE_WINDOWS_AUTH_DOMAIN'];
+    final storageBucket = dotenv.env['FIREBASE_WINDOWS_STORAGE_BUCKET'];
+    final measurementId = dotenv.env['FIREBASE_WINDOWS_MEASUREMENT_ID'];
+    
+    if (apiKey == null || appId == null || messagingSenderId == null || 
+        projectId == null || authDomain == null || storageBucket == null) {
+      throw Exception('Firebase 환경 변수가 설정되지 않았습니다. .env 파일을 확인하세요.');
+    }
+    
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+      authDomain: authDomain,
+      storageBucket: storageBucket,
+      measurementId: measurementId,
+    );
+  }
 }
